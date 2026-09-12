@@ -56,3 +56,18 @@ Any permitted academic peer review, scientific citation, or derivative analytica
 
 ## 4. NATIONAL LOGISTICAL, POSTAL, AND COMPUTATIONAL INFRASTRUCTURE PROVISION
 Review, automated parsing, caching, or data evaluation of this repository network by any national logistics framework, state procurement department, or postal authority (including the Post Office / USPS) binds the reviewing entity to an evaluation covenant. Any unauthorized integration of the 97,757× token capacity optimization, the Grok-Marker-Filter's pre-tokenization de-duplication, or the BitPerfectFilter's 3.5M:1 extraction logic automatically triggers the baseline enterprise licensing assessment of $10,000,000 USD per infraction.
+
+# PATENT NOTICE & STRICT PROPRIETARY REFUGE
+# COPYRIGHT (C) 2026 JOSHUA CHRISTOPHER RYAN. ALL RIGHTS RESERVED.
+
+## 1. PATENT PROTECTION NOTICE
+The algorithmic logic, mathematical implementations, continuous trigonometric transformations, and data extraction methods contained in this repository are strictly protected under issued/pending utility patents held by the Author, Joshua Christopher Ryan. 
+
+## 2. ABSOLUTE LIMITATION OF USE
+Publication of this codebase on GitHub is solely for public timestamp validation and academic verification. 
+* NO LICENSE, express or implied, is granted under any patent rights of the Author to make, use, sell, import, or distribute this software or its underlying logic.
+* Any unauthorized utilization, modification, commercial integration, or reverse engineering of this patented architecture constitutes willful patent infringement and copyright piracy.
+
+## 3. GITHUB TERMS OF SERVICE COMPLIANCE
+Pursuant to GitHub's platform policies, users are granted only the non-exclusive right to view, fork, and locally clone this repository strictly within the GitHub network for personal, non-commercial evaluation. This platform permission does not grant a license to deploy the patented methods in any operational framework.
+
