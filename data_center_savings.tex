@@ -1,0 +1,48 @@
+Adjusted Savings Model – 97.75% Band Power on First Registered Tokens
+
+New Cost Model
+
+First occurrence* of any unique block → registered & archived at *97.75%** of normal token cost (2.25% immediate saving + full bit-perfect extractability).
+All subsequent duplicates* of that same block → fully deduplicated (cost ≈ *0**).
+
+This matches the core design:  
+Everything new is archived and extractable. All redundancies are merely deduplicated.
+
+Assumptions for the Tables Below
+
+1 token ≈ 4 characters  
+Base cost: $0.50 per million tokens  
+Three realistic uniqueness rates for data-center / spam / log / tracking traffic:
+
+| Scenario              | Unique Content | Duplicate Content |
+|-----------------------|----------------|-------------------|
+| Moderate redundancy   | 10%            | 90%               |
+| High redundancy       | 3%             | 97%               |
+| Extreme (spam/USPS)   | 1%             | 99%               |
+
+Projected Savings Table
+
+| Daily Volume     | Daily Tokens | Unique Tokens (costed at 97.75%) | Duplicate Tokens (cost ≈ 0) | Effective Cost / Day | Money Saved / Day | Money Saved / Month | Money Saved / Year |
+|------------------|--------------|----------------------------------|-----------------------------|----------------------|-------------------|---------------------|--------------------|
+| 10 M chars   | 2.5 M        |                                  |                             |                      |                   |                     |                    |
+| – Moderate (10%) |              | 250 k                            | 2.25 M                      | $0.12                | $1.13             | $33.90              | $412               |
+| – High (3%)      |              | 75 k                             | 2.425 M                     | $0.037               | $1.21             | $36.30              | $442               |
+| – Extreme (1%)   |              | 25 k                             | 2.475 M                     | $0.012               | $1.24             | $37.20              | $453               |
+| 100 M chars  | 25 M         |                                  |                             |                      |                   |                     |                    |
+| – Moderate (10%) |              | 2.5 M                            | 22.5 M                      | $1.22                | $11.28            | $338                | $4,117             |
+| – High (3%)      |              | 750 k                            | 24.25 M                     | $0.37                | $12.13            | $364                | $4,427             |
+| – Extreme (1%)   |              | 250 k                            | 24.75 M                     | $0.12                | $12.38            | $371                | $4,519             |
+| 1 B chars    | 250 M        |                                  |                             |                      |                   |                     |                    |
+| – Moderate (10%) |              | 25 M                             | 225 M                       | $12.22               | $112.78           | $3,383              | $41,165            |
+| – High (3%)      |              | 7.5 M                            | 242.5 M                     | $3.67                | $121.33           | $3,640              | $44,285            |
+| – Extreme (1%)   |              | 2.5 M                            | 247.5 M                     | $1.22                | $123.78           | $3,713              | $45,180            |
+| 10 B chars   | 2.5 B        |                                  |                             |                      |                   |                     |                    |
+| – Moderate (10%) |              | 250 M                            | 2.25 B                      | $122.19              | $1,127.81         | $33,834             | $411,650           |
+| – High (3%)      |              | 75 M                             | 2.425 B                     | $36.66               | $1,213.34         | $36,400             | $442,850           |
+| – Extreme (1%)   |              | 25 M                             | 2.475 B                     | $12.22               | $1,237.78         | $37,133             | $451,800           |
+
+Summary of the Model
+
+First registered blocks always cost 97.75% of normal (tiny overhead for perfect archival).
+Every duplicate after that is essentially free.
+At high redundancy rates (typical for spam links, shipping updates, repeated agent memory, log streams), savings approach 97–99%.
