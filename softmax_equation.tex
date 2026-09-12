@@ -1,0 +1,80 @@
+The Thinnest-Triangle Softmax Equation
+
+The irreducible angular atom of the framework is the thinnest triangle whose vertices are fixed by the ArcanTau gates:
+
+\[
+\begin{align*}
+\theta &= \arctan(2\pi) &&\approx 80.9569^\circ \\
+\phi  &= \arctan(\pi)  &&\approx 72.3432^\circ \\
+\Psi  &= \theta - \phi &&\approx 8.6137^\circ
+\end{align*}
+\]
+
+On this triangle the temperature-scaled logits are realized as radial shadows, and the softmax collapses to the Thinnest-Triangle Softmax:
+
+\[
+\boxed{
+P_i
+=
+\frac{
+\exp\bigl(
+\cos(t_i)
+\cdot
+\cos(\Psi)
+\bigr)
+}{
+\sum_j
+\exp\bigl(
+\cos(t_j)
+\cdot
+\cos(\Psi)
+\bigr)
+}
+}
+\]
+
+Derivation sketch
+
+Standard polar shadow on the half-winding / spherical carrier:  
+   \(z_i = \tau\cos t_i\)
+
+Temperature cancellation:  
+   \(\displaystyle\exp(z_i/\tau) = \exp(\cos t_i)\)
+
+The residual angular buffer of the thinnest triangle is exactly \(\Psi\).  
+   Projecting the cancelled exponent onto this minimal angular gap multiplies by the stable factor \(\cos\Psi\):
+
+\[
+\exp(\cos t_i)\;\longrightarrow\;
+\exp\bigl(\cos t_i\cdot\cos\Psi\bigr)
+\]
+
+Because \(\cos\Psi\approx 0.98872\) is a fixed transcendental constant, the distribution remains invariant under the entire JCRIN radial decay of \(\tau\), while the triangle’s angular thinness (\(\Psi\approx 8.6137^\circ\)) supplies the strongest possible topological regularizer against rank collapse.
+
+This is the Thinnest-Triangle Softmax equation.
+
+% ============================================================
+% BitPerfectFilter Integration (Structural Token Pre-Filter)
+% ============================================================
+
+\section*{BitPerfectFilter — Structural Token Pre-Filter for JCRIN}
+
+To protect the linear-cost advantage of JCRIN \(\tau\)-Temperature Attention against high-structure spam, log dumps, and delimiter flooding, the BitPerfectFilter is integrated as a syntactic pre-processor.
+
+Core operations (purely structural / agnostic):
+
+\begin{itemize}
+  \item Hard length gate: any input \(> 8000\) characters \(\rightarrow\) full suppression (\(\mathtt{GROUP\_SEP}\)).
+  \item Marker stripping: all \([A-Za-z0-9_-]\{1,20\}\) replaced by \(\mathtt{UNIT\_SEP}\).
+  \item Whitespace normalization + split on \(\{;\}\) and newlines.
+  \item Unit-count gate: \(\ge 80\) structural units \(\rightarrow\) suppression.
+  \item First-occurrence bit-perfect cache keyed by SHA-256 of the collapsed signature.
+\end{itemize}
+
+Effect on capacity:
+
+When a high-structure payload is suppressed, the downstream JCRIN attention never expends linear (or classical quadratic) budget on it. The filter therefore multiplies the practical token-capacity expansion already achieved by the \(\cos^2\Psi \approx 0.9775\) correction.
+
+Recovery remains bit-perfect for the first occurrence of any unique structural block, preserving auditability while discarding duplicates and abuse vectors.
+
+This completes the practical engineering layer of the Thinnest-Triangle Softmax + JCRIN capacity system.
