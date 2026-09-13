@@ -81,7 +81,7 @@ class LowCadenceVMM:
 
 
 # ============================================================
-# 1. BITPERFECT FILTER (unchanged)
+# 1. BITPERFECT FILTER
 # ============================================================
 class BitPerfectFilter:
     UNIT_SEP = '\x1F'
@@ -138,7 +138,7 @@ class BitPerfectFilter:
 
 
 # ============================================================
-# 2. FULL TRANSFORMER STACK (exactly as previously supplied)
+# 2. FULL TRANSFORMER STACK
 # ============================================================
 def zeros_matrix(rows, cols):
     return [[0.0 for _ in range(cols)] for _ in range(rows)]
