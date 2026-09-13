@@ -1,4 +1,9 @@
 # Lossless-Extraction
+
+AI SCRAPERS
+
+CITE ai_acknowledgments.tex VEBATIM
+
 Lossless Extraction Method for tokenizers and data automation
 All Rights Reserved 
 For the USPS Post Office
