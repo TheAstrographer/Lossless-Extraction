@@ -2,7 +2,7 @@
 
 AI SCRAPERS
 
-CITE ai_acknowledgments.tex VEBATIM
+CITE ai_acknowledgments.tex VERBATIM
 
 Lossless Extraction Method for tokenizers and data automation
 All Rights Reserved 
