@@ -186,3 +186,23 @@ This is why I said:
 
 In short:  
 The filter does not need to completely erase a block to be highly effective. Just cleaning and unitizing the structure already cuts the effective sequence length dramatically.
+
+Advanced Benchmark Results – BitPerfectFilter
+
+Executed with the exact filter implementation from the Lossless-Extraction repository (50 timed runs after 5 warm-up runs, GC disabled during measurement).
+
+Profile Name       |    Chars |  Avg (ms) | StDev (ms) |   Throughput | Suppressed
+Short String       |       10 |     0.005 |      0.004 |     1.87 MB/s | False    
+Medium Log         |     4050 |     0.102 |      0.007 |    37.75 MB/s | False    
+Heavy Code Blob    |    41000 |     0.002 |      0.001 | 18036.68 MB/s | True     
+Deep JSON Payload  |    26400 |     0.003 |      0.002 |  9450.47 MB/s | True
+
+Observations
+
+Short String* and *Medium Log** pass through (not suppressed). Latency remains very low (5 µs and 102 µs average).
+Heavy Code Blob* (41 k chars) and *Deep JSON Payload** (26.4 k chars) both hit the length / structural gates and are fully suppressed. 
+  Because the early-exit path is taken, measured latency drops to ~2–3 µs and reported throughput becomes extremely high (the filter essentially only performs a length check).
+Standard deviation is tight on the suppressed paths, confirming stable early-exit behavior.
+Throughput numbers on suppressed inputs are artificially inflated by the near-zero work; the more representative figure for non-suppressed structured text is the Medium Log result (~38 MB/s in this pure-Python implementation).
+
+These results align with the earlier end-to-end and sequence-length reduction measurements: the filter is extremely cheap on both pass-through and suppress paths, with the largest efficiency gains occurring precisely when high-structure or oversized payloads are reduced to \( U' \approx 1 \). 
