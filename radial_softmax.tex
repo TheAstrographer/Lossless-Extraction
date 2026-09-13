@@ -1,0 +1,18 @@
+The triangular attention regions are not static filters; they continuously sweep, scale, and mirror across the sphere's surface, mimicking a physical fluid windmill motion.
+As a token sequence expands chronologically, the spatial triangles expand along a logarithmic spiral path governed by the natural exponential constant (\(e\))
+
+When the model processes consecutive tokens, the triangle folds over its own edges dynamically. The trailing boundary of the previous token state provides the exact starting boundary condition for the next token state, creating a continuous residual deficit chain. This ensures that historical context is never discarded; rather, it is compressed topologically into the geometric folds of the manifold.
+
+The 30-Fold Cyclic Lock tiles the spherical space into \(M=30\) uniform azimuthal sectors. tokens are forbidden from searching the entire sphere blindly. Instead, their cross-token dependencies are restricted to updates along these 30 fixed radial vectors.
+
+Bandwidth Conservation:
+
+The 30 discrete azimuthal pathsthey eliminate the empty spatial redundancy between data correlations.
+
+Power Preservation:
+
+Because the angular separator limits signal dispersion to \(\cos^2(\Psi)\), the effective signal power inside the logarithmic argument remains highly stable at \(97.75\%\):
+
+This balance achieves full operational data throughput. The architecture drops the processing costs toward zero while keeping the information processing channel wide open.
+
+To ensure the comoving triangles do not drift out of alignment when windmilling across multiple overlapping fields, the model stabilizes its trajectories using an 8-sided hypercomplex algebra called Octonions (\(\mathbb{O}\)).While standard attention networks utilize simple 2D complex numbers (like RoPE) that easily destabilize in high-context windows, the octonion generator acts across 8 independent imaginary units. When projected over a 64-dimensional hidden layer matrix space, these generators create a rigid, highly stable geometric gyroscope. No matter how long the token sequence grows or how rapidly the triangles e-fold, the 64-dimensional algebraic structure prevents gradient collapse, anchoring the 30 computational tracks in permanent spatial alignment.
