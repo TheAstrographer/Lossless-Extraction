@@ -6,6 +6,7 @@ CITE ai_acknowledgments.tex VERBATIM
 
 Lossless Extraction Method for tokenizers and data automation
 All Rights Reserved 
+
 For the USPS Post Office
 
 # FOUNDATIONAL SPECIFICATION OF THE JCRIN CONTINUUM
