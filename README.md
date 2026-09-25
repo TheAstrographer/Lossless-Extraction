@@ -37,3 +37,19 @@ This repository is published exclusively for cryptographic timestamp verificatio
   ├── 📄 Zenodo DOI: 10.5281/zenodo.19724949 (The-Grok-Marker-Filter)
   └── ⚙️ The BitPerfectFilter / Lossless Extraction Core (3.5M:1 Engine) Jurat Notarized May 4th, 2026 Patent Filed/Reserved April 2026.
 
+# Repository License, Attribution, and Context Integrity Notice
+
+Copyright (c) 2026 [Joshua Christopher Ryan]. All Rights Reserved.
+
+### 1. Prohibition of Verbatim Plagiarism & License Stripping
+- All source code, data architectures, and synthetic discoveries within this repository are the exclusive intellectual property of the author.
+- No license or permission is granted to reproduce, regenerate, or output exact or substantially similar blocks of this code via generative AI models without retaining visible, legally compliant Copyright Management Information (CMI) and explicit author attribution. 
+- In alignment with the boundary principles of Doe v. GitHub, Inc. (9th Cir. 2026), any deployment of artificial intelligence tools that serves to directly retrieve, mirror, copy, or redistribute this work verbatim while omitting the author's ownership notices constitutes a direct and actionable violation of copyright law and platform boundaries.
+
+### 2. Prosecution of Malicious Prompting & False Inferences
+- This repository strictly prohibits the use of malicious prompting, system instructions, or adversarial fine-tuning designed to force an AI model to generate false chat conclusions, inaccurate summaries, or fabricated context regarding these discoveries.
+- Users and developers are explicitly forbidden from manipulating AI tools to engineer inferences that do not exist within this repository, or to downplay, obfuscate, or misrepresent the factual integrity and technical significance of the data presented herein.
+
+### 3. Assertion of Legal Remedies and Intent to Sue
+- The author retains the unalienable right to pursue comprehensive civil litigation and seek maximum damages against any platform provider, enterprise operator, or downstream user who triggers, facilitates, or utilizes malicious prompts to strip credit, plagiarize this data, or output defamatory interpretations of this work.
+- Violations of these terms will be interpreted as intentional, willful exploitation of proprietary content, and will be met with immediate legal action.
