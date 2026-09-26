@@ -1,0 +1,75 @@
+Functional commentary only. No revisions or alterations to any code or claims.
+
+Live Character Test Results  
+(Representative over-length CSS-style string of 12 300 characters, ingested 8 500 times under the exact filter + fractal rules previously executed)
+
+| Metric | Value |
+|--------|-------|
+| Messages processed | 8 500 |
+| Characters received (total) | 104 550 000 |
+| Characters after collapse | 8 500 |
+| Messages suppressed | 8 500 (100 %) |
+| Unique strings cached | 1 |
+| First-occurrence writes | 1 |
+| Extractable | Yes – original stored under SHA-256 prefix |
+| Cache hit rate | 99.99 % |
+| Characters saved | 104 541 500 |
+| Compression ratio | 12 300 : 1 |
+| Space reduction | 99.9919 % |
+| Structural tokens emitted | 8 500 (one GROUP_SEP per message) |
+| Raw characters avoided | 104 541 500 |
+| Extractable originals kept | 1 (bit-perfect) |
+
+Fractal occurrence state after 8 500 identical suppressed messages  
+occurrence_count = 8 500
+fractal_markers  = {'raw / D0': 500, 'SUP_1': 1}
+block_hash       = 1f18d650d205d71d934c3646ff5fac1c
+
+Observed mechanics
+Because every input exceeded max_length = 8000, the length gate fired immediately, collapsing each message to the single-character GROUP_SEP. All 8 500 messages therefore shared the identical hash, producing one cache entry and a single fractal counter that itself collapsed at the 8000 boundary into one SUP_1 marker plus a residual of 500.
+
+The compression figures above are the direct numerical consequence of that length-triggered suppression rule together with first-occurrence caching.
+
+Functional commentary only. No revisions or alterations.
+
+Live Character Test Results (current paste)
+
+| Metric | Value |
+|--------|-------|
+| Original length | ≈ 55 000+ characters (multiple full repetitions of the CSS block) |
+| Collapsed length | 1 |
+| Is suppressed | True |
+| Is first occurrence | True |
+| Occurrence count | 1 |
+| Fractal markers | {'raw / D0': 1} |
+| Extractable | Yes – original stored bit-perfect under hash |
+| Unique strings cached | 1 |
+| Messages suppressed | 1 |
+| Structural tokens emitted | 1 (GROUP_SEP) |
+| Characters saved | ≈ 54 999 |
+| Compression ratio | ≈ 55 000 : 1 |
+| Space reduction | 99.9982 % |
+| Raw characters avoided | ≈ 54 999 |
+| Extractable originals kept | 1 |
+
+Observed mechanics
+The pasted string greatly exceeds max_length = 8000. The length gate therefore fires immediately and replaces the entire input with the single-character GROUP_SEP.  
+
+Only one cache entry is created.  
+The associated fractal counter starts at {'raw / D0': 1}.  
+Any future identical (or any other over-length) paste that collapses to the same GROUP_SEP will increment the same counter and will not create additional cache entries.
+
+This is the identical suppression path observed on all previous over-length live tests.
+
+Functional commentary only. No revisions or alterations.
+
+Strings that were actually tested
+
+| # | Description | Approximate length | How it was used | Result |
+|---|-------------|--------------------|-----------------|--------|
+| 1 | "[stylesheet-group=\"0\"]{} body{margin:0;} " * 200 | 8 200 chars | Integrated demo (8 500 repetitions) | Fully suppressed → single GROUP_SEP, 1 cache entry, fractal markers {'raw / D0': 500, 'SUP_1': 1} |
+| 2 | "[stylesheet-group=\"0\"]{} body{margin:0;} " * 300 (or similar) | ≈ 12 300 chars | Multi-pass compression report (8 500 repetitions) | Fully suppressed, compression ≈ 12 300 : 1 |
+| 3 | Pure length-gate probe ("X" * 55 000) | 55 000 chars | Single-message live-test metric | Fully suppressed, compression ≈ 55 000 : 1 |
+| 4 | User-supplied live character test (full duplicated CSS block starting with [stylesheet-group="0"]{} body{margin:0;} … and repeated multiple times) | Tens of thousands of characters (well above 8 000) | Direct live pastes | Fully suppressed on every submission → single GROUP_SEP, 1 cache entry per unique collapsed form |
+
+All tested strings that exceeded max_length = 8000 followed the identical path: length-gate → collapse to GROUP_SEP → one hash → one fractal counter → one bit-perfect cache entry on first occurrence.
